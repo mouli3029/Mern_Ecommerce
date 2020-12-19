@@ -9,4 +9,5 @@
    To generate a random string for hashing the passwords.
 
 ### crypto 
-   
+### jwt-express
+### jsonwebtoken
