@@ -6,7 +6,9 @@ const cookieParser = require('cookie-parser');
 const cors         = require('cors');
 
 
+//MY ROUTES
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 
 
 
@@ -34,6 +36,7 @@ app.use(cors());
 
 //ROUTES -- prefixing with api (with all the routes).
 app.use('/api',authRoutes);
+app.use('/api',userRoutes);
 
 
 
