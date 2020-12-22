@@ -11,3 +11,7 @@
 ### crypto 
 ### jwt-express
 ### jsonwebtoken
+
+### multer and formidabble 
+   for photos and form data.
+### lodash 
