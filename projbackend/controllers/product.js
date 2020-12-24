@@ -27,7 +27,16 @@ exports.createProduct = (req,res)=>{
             });
         }
 
-        //TODO : restrictions on fields.
+        
+        //Destructing the fields
+
+        const {price,name,description,category,stock} = fields;
+
+        if( !name || !description || !price || !category || !stock){
+            return res.status(400).json({
+                error : "Please include all the fields"
+            })
+        }
         let product = new Product(fields);
         //Handling the file here..   2 * 1024 * 1024
         if(file.photo){
@@ -40,6 +49,8 @@ exports.createProduct = (req,res)=>{
             product.photo.contentType = file.photo.type;
 
         }
+
+        //console.log(product);
 
         //save to the DB
         product.save((err,product)=>{
