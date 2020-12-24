@@ -20,6 +20,11 @@ const OrderSchema = new mongoose.Schema({
         type : Number,
     },
     address : String,
+    status  : {
+        type : String,
+        default : "Recieved",
+        enum : ["Cancelled","Delivered","Shipped","Processing","Recieved"]
+    },
     updated : Date,
     user : {
         type : ObjectId,
@@ -28,6 +33,9 @@ const OrderSchema = new mongoose.Schema({
 },{timestamps : true});
 
 
-const Orders = mongoose.model('Order',OrderSchema);
+const Order = mongoose.model('Order',OrderSchema);
 
-module.exports = {Orders, ProductCart}
+module.exports = {Order, ProductCart}
+
+//enums are the restricted choice from that u can use
+// state of the order(recived cancelled delivered)

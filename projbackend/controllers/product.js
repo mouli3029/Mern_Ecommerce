@@ -156,6 +156,19 @@ exports.getAllProducts = (req,res)=>{
         res.json(products);
     })
 }
+
+exports.getAllUniqueCategories = (req,res)=>{
+    Product.distinct('category',{},(err,category)=>{
+        if(err){
+            return res.status(400).json({
+                error : "No Category Found"
+            })
+        }
+        res.json(category);
+    })
+
+}
+
 //stock decreases and sold increases
 exports.updateStock = (req,res,next)=>{
 
