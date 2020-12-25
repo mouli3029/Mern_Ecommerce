@@ -6,8 +6,8 @@ import { authenticate, isAuthenticated, signin } from '../auth/helper';
 const Signin=()=> {
  
     const [values,setValues] = useState({
-        email : "",
-        password : "",
+        email : "mouli12@gmail.com",
+        password : "12345",
         error : "",
         loading : false,
         didRedirect : false
@@ -62,7 +62,7 @@ const Signin=()=> {
             return <Redirect to='/'/>
         }
     }
-     const loadingMessage = ()=>{
+    const loadingMessage = ()=>{
          return(
              loading && (
                  <div className="alert alert-info">
@@ -70,7 +70,7 @@ const Signin=()=> {
                  </div>
              )
          )
-     }
+    }
         
     const errorMessage = ()=>{
         return (
