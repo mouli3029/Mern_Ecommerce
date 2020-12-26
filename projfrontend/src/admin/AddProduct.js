@@ -29,6 +29,7 @@ const AddProduct = () => {
 
     const preload = () =>{
         getCategories().then(data =>{
+          console.log(data)
             if(data.error){
                 setValues({...values,error : data.error})
             }
